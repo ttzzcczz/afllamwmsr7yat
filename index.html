@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تنقل بين الصفحات</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .navigation a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation" id="navigation">
+            <!-- الروابط ستتم إضافتها هنا بواسطة الجافاسكريبت -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var navigationDiv = document.getElementById('navigation');
+            var pageNames = [
+                "عقال",
+                "كمبارس",
+                "محل التيلفونات",
+                "مدير كبير",
+                "مطلوب",
+                "موعد",
+                "هلا بالخميس",
+                "ولد المجروح",
+                "اخر رجل",
+                "اخو مرفت",
+                "الحكم لكم",
+                "العضماء",
+                "الليلة زفتهه",
+                "المجروح",
+                "تسجيل دخول",
+                "خبز",
+                "سوبر ماركت",
+                "شون شيب",
+                "عزوبي"
+            ];
+
+            // إضافة الروابط لكل صفحة
+            for (var i = 0; i < pageNames.length; i++) {
+                var link = document.createElement('a');
+                link.href = '/index/' + encodeURIComponent(pageNames[i]) + '.htm';
+                link.textContent = pageNames[i];
+                navigationDiv.appendChild(link);
+            }
+
+            // إضافة زر "السجن"
+            var prisonLink = document.createElement('a');
+            prisonLink.href = '/index/الاسم.htm'; // المسار لصفحة السجن
+            prisonLink.textContent = 'الاسم';
+            navigationDiv.appendChild(prisonLink);
+        });
+    </script>
+</body>
+
+</html>
